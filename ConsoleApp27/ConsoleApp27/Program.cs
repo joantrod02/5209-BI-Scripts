@@ -262,12 +262,17 @@ namespace GreenButtonGo.Scripting
 
                 foreach (var carouselStorageReadline_row in carouselStorageHotelRows)
                 {
-                    if (Convert.ToString(carouselStorageReadline_row[2]) == GBGLabwareName_Nunc96 && Convert.ToBoolean(carouselStorageReadline_row[3]) == false)
+                    if (Convert.ToString(carouselStorageReadline_row[2]) == GBGLabwareName_Nunc96 && Convert.ToBoolean(carouselStorageReadline_row[3] && Convert.ToString(carouselStorageReadline_row[1]).ToUpper()) == "BLANK NUNC 96 PLATE")
                     {
                         numberOf_Nunc96Plates++;//count up if the criteria is met that a nunc labware type is in storage and has not been run yet. 
                     }
 
-                    //need to count the amount of free spaces in the hotel storage here as well
+                    if (Convert.ToString(carouselStorageReadline_row[0] == string.Empty))
+                    {
+                        numberOf_CarouselHotelFreeSpace++;
+                    }
+
+                
                 }
 
                 // all storage rows have been captured into string arrays made of arrays. 

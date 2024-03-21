@@ -275,7 +275,10 @@ namespace GreenButtonGo.Scripting
             if (userSelection_AssaySource.ToUpper() == "ASSAY PLATES")
             {
                  //This section evaluates if the assay being barcoded by the user has sufficient plates and spaces in the appropriate storage systems to complete the barcoding order.
-                 
+                if(assayBarcode_Prefix.ToUpper() == "AEDES")
+                {
+                    //for this assay you need to see how many plates are present in both the out
+                }
             }
 
             else
@@ -284,13 +287,13 @@ namespace GreenButtonGo.Scripting
             }
 
             if (bln_DoAllPlatesInZone == true)
-                {
+            {
                     // set the global counter to the amount of plates present in the zone 
-                }
-                else
-                {
-                    // otherwise, make sure that the amount of plates present in the zone matches for the input and output. Othersie, just end and return a false.
-                }
+            }
+            else
+            {
+                // otherwise, make sure that the amount of plates present in the zone matches for the input and output. Othersie, just end and return a false.
+            }
 
         }
 

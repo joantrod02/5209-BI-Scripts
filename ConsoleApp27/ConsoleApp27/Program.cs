@@ -76,10 +76,7 @@ namespace GreenButtonGo.Scripting
             PullInAllCarouselStorage(out carouselStorageStackRows, out carouselStorageHotelRows, variables, runtimeInfo);
             pullInAllSkylineStorage(out skyLineStorageRows, variables, runtimeInfo);
 
-            if (userSelection_AssaySource == "Assay Plates")//if you are not doing assay plates, you are just using source plates, which means you just need to look at carousel storage
-            {
-
-                //analyze the assay barcode prefix
+            //analyze the assay barcode prefix
                 //AEDES = Corning 384 Plates, these are coming from skyline
                 //DIMFM = Corning 384 Plates, These are coming from skyline
                 //DIL4A = Corning 96 plates, these are coming from skyline
@@ -275,10 +272,18 @@ namespace GreenButtonGo.Scripting
                 
                 }
 
-                // all storage rows have been captured into string arrays made of arrays. 
-                // 
-                // make sure there are more than 0 plates in the correct zone based on the input. If the GBG variable requires a specific amount of plates from that zone, make sure that number match what was found
-                if (bln_DoAllPlatesInZone == true)
+            if (userSelection_AssaySource.ToUpper() == "ASSAY PLATES")
+            {
+                 //This section evaluates if the assay being barcoded by the user has sufficient plates and spaces in the appropriate storage systems to complete the barcoding order.
+                 
+            }
+
+            else
+            {
+                // we are just analyzing the Echo LDV plate storage if its just source plates. There has to be enough room in the carousel to match the amount of plates being created for barcoding
+            }
+
+            if (bln_DoAllPlatesInZone == true)
                 {
                     // set the global counter to the amount of plates present in the zone 
                 }
@@ -286,14 +291,6 @@ namespace GreenButtonGo.Scripting
                 {
                     // otherwise, make sure that the amount of plates present in the zone matches for the input and output. Othersie, just end and return a false.
                 }
-
-                // analyze where the 
-            }
-
-            else
-            {
-                // we are just analyzing the Echo LDV plate storage if its just source plates. There has to be enough room in the carousel to match the amount of plates being created for barcoding
-            }
 
         }
 

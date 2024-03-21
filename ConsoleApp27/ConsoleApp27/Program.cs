@@ -280,6 +280,8 @@ namespace GreenButtonGo.Scripting
             CarouselStackStorageRows = Database.GetAllRows(carouselstackStorageTableName, carousel_Stackheader);
             CarouselHotelStorageRows = Database.GetAllRows(carouselHotelStorageTableName, carousel_Hotelheader);
             return;
+            //There is more to life than this
+        
         }
 
         static void pullInAllSkylineStorage(out string[] skylineStorageRows, Dictionary<String, Object> variables, RuntimeInfo runtimeInfo)

@@ -147,6 +147,28 @@ namespace GreenButtonGo.Scripting
 
 
                     }
+
+                    if (Convert.ToString(carouselstackStorageReadline_row[2]) == GBGZoneName_RSTCA)//direction of storage will get inverted in the gbg process
+                    {
+                        //count the amount of plates present in the stack and then subtract from the total plates possible to hold in the stack based on assay
+                        numberOf_RSTCA_StackFreeSpace = numberOf_RSTCA_StackFreeSpace + (totalAmount_RSTCA_Stack - Convert.ToInt32(carouselstackStorageReadline_row[1]));
+
+
+                    }
+                    if (Convert.ToString(carouselstackStorageReadline_row[2]) == GBGZoneName_CFFCA)//direction of storage will get inverted in the gbg process
+                    {
+                        //count the amount of plates present in the stack and then subtract from the total plates possible to hold in the stack based on assay
+                        numberOf_CFFCA_StackFreeSpace = numberOf_CFFCA_StackFreeSpace + (totalAmount_CFFCA_Stack - Convert.ToInt32(carouselstackStorageReadline_row[1]));
+
+
+                    }
+                    if (Convert.ToString(carouselstackStorageReadline_row[2]) == GBGZoneName_CFFIA)//direction of storage will get inverted in the gbg process
+                    {
+                        //count the amount of plates present in the stack and then subtract from the total plates possible to hold in the stack based on assay
+                        numberOf_CFFIA_StackFreeSpace = numberOf_CFFIA_StackFreeSpace + (totalAmount_CFFIA_Stack - Convert.ToInt32(carouselstackStorageReadline_row[1]));
+
+
+                    }
                 }
 
                 foreach (var carouselstackStorageReadline_row in carouselStorageStackRows)
@@ -232,7 +254,7 @@ namespace GreenButtonGo.Scripting
                     if (Convert.ToString(carouselstackStorageReadline_row[2]) == GBGZoneName_CFFIA)//direction of storage will get inverted in the gbg process
                     {
                         //count the amount of plates present in the stack and then subtract from the total plates possible to hold in the stack based on assay
-                        numberOf_CFFCA_StackFreeSpace = numberOf_CFFIA_StackFreeSpace + (totalAmount_CFFIA_CarouselStack - Convert.ToInt32(carouselstackStorageReadline_row[1]));
+                        numberOf_CFFIA_StackFreeSpace = numberOf_CFFIA_StackFreeSpace + (totalAmount_CFFIA_CarouselStack - Convert.ToInt32(carouselstackStorageReadline_row[1]));
 
 
                     }
